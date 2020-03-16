@@ -7,3 +7,19 @@ Not deploy function code, and configure other settings.
 
 - Terraform version > 0.12
 
+## Usage
+
+```hcl
+module "lambda-settings" {
+  source = "youyo/lambda-settings/aws"
+
+  name    = "my-function"
+  handler = "lambda_function.lambda_handler"
+  runtime = "python3.8"
+
+  tags = {
+    Terraform   = "true"
+    Environment = "dev"
+  }
+}
+```
